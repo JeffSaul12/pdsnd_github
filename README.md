@@ -1,17 +1,24 @@
 >**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
 
 ### Date created
-Include the date you created this project and README file.
+Project and README file created _25-Jul-2023_
 
-### Project Title
-Replace the Project Title
+### Bikeshare Data Project
 
 ### Description
-Describe what your project is about and what it does
+This project analyses data from **Chicago, Washington, or New York City** on their bikeshare schemes.
+Users choose which _city_ they'd like to view, and can filter by _month_ and/or _weekday_, or view all the data together.
+The project displays:
+* The most popular times for bikeshare hire
+* The most popular stations for bikeshare hire
+* The total and mean duration for bikeshare hire
+* The number of users by type
+* The number of users by gender
+* The earliest, most recent, and most common birth years of users
 
 ### Files used
-Include the files used
+The project is run from the file `bikeshare.py`, and uses data from `chicago.csv`, `new_york_city.csv`, and `washington.csv`.
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+To help with some of the pandas time conversion functions and methods, I consulted **Stack Overflow**, which proved very useful.
 
