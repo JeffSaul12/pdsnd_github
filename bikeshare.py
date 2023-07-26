@@ -17,27 +17,11 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    """good_input = False
-    valid_cities = ['chicago', 'new york city', 'washington']
-    while not good_input:
-        city = input('Would you like to see data for Chicago, New York City, or Washington? ').lower()
-        if city in valid_cities:
-            good_input = True
-        else:
-            print('Please try again with a valid city.')"""
     valid_cities = ['chicago', 'new york city', 'washington']
     prompt = 'Would you like to see data for Chicago, New York City, or Washington? '
     city = check_response(prompt, valid_cities)
 
     # Ask if user wants to filter by day, month, neither, or both
-    """good_input = False
-    valid_filters = ['weekday', 'month', 'both', 'neither']
-    while not good_input:
-        filter_pref = input('Would you like to filter the data by weekday, month, both, or neither? ').lower()
-        if filter_pref in valid_filters:
-            good_input = True
-        else:
-            print('Please choose one of the four options given.')"""
     valid_filters = ['weekday', 'month', 'both', 'neither']
     prompt = 'Would you like to filter the data by weekday, month, both, or neither? '
     filter_pref = check_response(prompt, valid_filters)
@@ -48,28 +32,12 @@ def get_filters():
             
     # TO DO: get user input for month (all, january, february, ... , june)
     if filter_pref == 'month' or filter_pref == 'both':
-        """good_input = False
-        valid_months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
-        while not good_input:
-            month = input("Please choose a month between January and June for which to view data (or 'all'): ").lower()
-            if month in valid_months:
-                good_input = True
-            else:
-                print('Please try again with a valid month.')"""
         valid_months = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
         prompt = "Please choose a month between January and June for which to view data (or 'all'): "
         month = check_response(prompt, valid_months)
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     if filter_pref == 'weekday' or filter_pref == 'both':
-        """good_input = False
-        valid_days = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-        while not good_input:
-            day = input("Please choose a weekday for which to view data (or 'all'): ").lower()
-            if day in valid_days:
-                good_input = True
-            else:
-                print('Please try again with a valid weekday.')"""
         valid_days = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
         prompt = "Please choose a weekday for which to view data (or 'all'): "
         day = check_response(prompt, valid_days)
