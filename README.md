@@ -19,6 +19,7 @@ The user then has the option to view the raw data, provided to them 5 lines at a
 
 ### Files used
 The project is run from the file `bikeshare.py`, and uses data from `chicago.csv`, `new_york_city.csv`, and `washington.csv`.
+It uses the `time`, `pandas`, and `numpy` packages.
 
 ### Credits
 To help with some of the pandas time conversion functions and methods, I consulted **Stack Overflow**, which proved very useful.
