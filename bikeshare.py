@@ -214,8 +214,8 @@ def user_stats(df, city):
     # TO DO: Display counts of user types
     user_types = df['User Type'].value_counts()
     print('The number of users by type for {} are:'.format(city.title()))
-    for i in user_types.index:
-        print('{}: {:,}'.format(i, user_types[i]))
+    for row in user_types.index:
+        print('{}: {:,}'.format(row, user_types[row]))
 
     if city == 'washington':
         print('Gender and birth year breakdown is not available for Washington.')
@@ -223,8 +223,8 @@ def user_stats(df, city):
     # TO DO: Display counts of gender
         print('Gender breakdown for {} is:'.format(city.title()))
         gender_counts = df['Gender'].value_counts()
-        for i in gender_counts.index:
-            print('{}: {:,}'.format(i, gender_counts[i]))
+        for row in gender_counts.index:
+            print('{}: {:,}'.format(row, gender_counts[row]))
             
     # TO DO: Display earliest, most recent, and most common year of birth
         print('The earliest year of birth for users in {} is {:.0f}.'.format(city.title(), df['Birth Year'].min()))
