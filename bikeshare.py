@@ -236,8 +236,9 @@ def user_stats(df, city):
 
     
 def display_data(df, city):
-    """ Displays 5 records of data at a time for the user until they no longer wish to see
-        more data, using the original columns from the dataset
+    """ Displays X records of data at a time for the user until they no 
+        longer wish to see more data, using the original columns from the dataset
+        X defaults to 5 if user does not choose between 1 and 10 rows to display
         Suppresses Gender and Birth Year columns for Washington  """
     
     # Assemble column list, depending if we're analysing Washington or not
@@ -248,24 +249,32 @@ def display_data(df, city):
         column_list = ['Start Time', 'End Time', 'Trip Duration', 'Start Station', \
                           'End Station', 'User Type']
     
-    # Ask user if they want to see 5 records of data
-    more_data = input('Would you like to view the first 5 records in the dataset? Enter yes or no.\n')
+    # Ask user if they want to see X records of data
+    more_data = input('Would you like to view the first few records in the dataset? \
+                      Enter yes or no.\n')
     if more_data.lower() == 'yes':
-        # if 'yes' show the first 5 rows and ask again
+        # If 'yes', ask user how many rows of data they wish to see at once
+        valid_rows = range(1,11)
+        prompt = "How many (1-10) rows of data would you like to see at once? "
+        if num_records not in valid_rows:
+            print('Invalid response, defaulting to 5 rows.')
+            num_records = 5
+
+        # if 'yes' show the first num_records rows and ask again
         start_index = 0
         
         # keep asking and displaying until user says 'no' or we reach the end of the data
         while True:
-            for i in range(start_index, start_index + 5):
+            for i in range(start_index, start_index + num_records):
                 
                 # ensure we're not beyond the end of the data
                 if i < df.shape[1]:
                     print(df[column_list].iloc[i])
                     
-            # ask user again.  If 'yes', start 5 rows later
-            more_data = input('Would you like to view 5 more records of data?\n')
+            # ask user again.  If 'yes', start X rows later
+            more_data = input('Would you like to view {} more records of data?\n'.format(num_records))
             if more_data.lower() == 'yes':
-                start_index += 5
+                start_index += num_records
             # if 'no', exit
             else:
                 break
